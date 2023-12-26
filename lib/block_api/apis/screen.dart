@@ -1,7 +1,7 @@
-import 'package:blockdemoapi/block/appblock.dart';
-import 'package:blockdemoapi/block/event.dart';
-import 'package:blockdemoapi/block/state.dart';
-import 'package:blockdemoapi/model.dart';
+import 'package:blockdemoapi/block_api/appblock.dart';
+import 'package:blockdemoapi/block_api/event.dart';
+import 'package:blockdemoapi/block_api/state.dart';
+import 'package:blockdemoapi/block_api/apis/model.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_bloc/flutter_bloc.dart';

@@ -1,4 +1,4 @@
-import 'package:blockdemoapi/model.dart';
+import 'package:blockdemoapi/block_api/apis/model.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 

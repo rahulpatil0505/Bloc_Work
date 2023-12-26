@@ -1,8 +1,8 @@
 import 'package:bloc/bloc.dart';
-import 'package:blockdemoapi/block/event.dart';
-import 'package:blockdemoapi/block/state.dart';
+import 'package:blockdemoapi/block_api/event.dart';
+import 'package:blockdemoapi/block_api/state.dart';
 
-import '../api.dart';
+import 'apis/api.dart';
 
 class UserBloc extends Bloc<UserEvents, UserStates> {
   final UserData _userData;
