@@ -8,7 +8,7 @@ import 'package:equatable/equatable.dart';
 import 'package:http/http.dart' as http;
 
 import '../../models/model.dart';
-import '../../models/post_model.dart';
+
 part 'post_event.dart';
 part 'post_state.dart';
 

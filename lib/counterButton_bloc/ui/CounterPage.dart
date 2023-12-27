@@ -28,6 +28,7 @@ class _CounterPageState extends State<CounterPage> {
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           counterBloc.add(CounterIncrementevent());
+
           print("Pressed");
         },
         child: Icon(Icons.add),

@@ -23,7 +23,7 @@ class _BlocgetApiState extends State<BlocgetApi> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Api Post Data"),
+        title: const Text("Api Post Data"),
       ),
       body: BlocConsumer<PostBloc, PostState>(
         bloc: postBloc,
@@ -41,7 +41,7 @@ class _BlocgetApiState extends State<BlocgetApi> {
                     child: Column(
                       children: [
                         Text(sucessState.posts[index].title.toString()),
-                        Divider(),
+                        const Divider(),
                         Text(sucessState.posts[index].userId.toString())
                       ],
                     ),
@@ -49,7 +49,7 @@ class _BlocgetApiState extends State<BlocgetApi> {
                 },
               ));
             default:
-              return SizedBox();
+              return const SizedBox();
           }
         },
         listener: (context, state) {},
