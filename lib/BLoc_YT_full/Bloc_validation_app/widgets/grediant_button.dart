@@ -1,12 +1,15 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 
 import '../colors_in.dart';
 
 class GradientButton extends StatelessWidget {
   final VoidCallback onPressed;
+  final String name;
   const GradientButton({
     Key? key,
     required this.onPressed,
+    required this.name,
   }) : super(key: key);
 
   @override
@@ -31,9 +34,9 @@ class GradientButton extends StatelessWidget {
           backgroundColor: Colors.transparent,
           shadowColor: Colors.transparent,
         ),
-        child: const Text(
-          'Sign in',
-          style: TextStyle(
+        child: Text(
+          name,
+          style: const TextStyle(
             fontWeight: FontWeight.w600,
             fontSize: 17,
           ),

@@ -1,3 +1,7 @@
+import 'package:blockdemoapi/BLoc_YT_full/Bloc_validation_app/bloc/bloc_observer.dart';
+import 'package:blockdemoapi/BLoc_YT_full/Weather_app/Data/provider/weather_provider.dart';
+import 'package:blockdemoapi/BLoc_YT_full/Weather_app/Data/repository/weather_repositry.dart';
+import 'package:blockdemoapi/BLoc_YT_full/Weather_app/bloc/weather_bloc.dart';
 import 'package:blockdemoapi/BLoc_YT_full/bloc/counter_bloc.dart';
 import 'package:blockdemoapi/BLoc_YT_full/cubit/counter_cubit.dart';
 import 'package:blockdemoapi/BLoc_YT_full/todo_app/cubit/todo_cubit.dart';
@@ -6,35 +10,58 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'BLoc_YT_full/Bloc_validation_app/Loginscreen.dart';
 import 'BLoc_YT_full/Bloc_validation_app/bloc/authentication_bloc.dart';
-import 'BLoc_YT_full/home_page.dart';
-import 'BLoc_YT_full/todo_app/todo_show.dart';
-import 'bloc_api_YT/post/ui.dart';
-import 'counterButton_bloc/ui/CounterPage.dart';
+
+import 'BLoc_YT_full/Weather_app/Ui_part/Screens/Weather_screen.dart';
+import 'BLoc_YT_full/Weather_app/Ui_part/Screens/Weather_with_bloc.dart';
 
 void main() {
+  Bloc.observer = MyBlocObserver();
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp({Key? key}) : super(key: key);
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MultiBlocProvider(
+    return
+        // RepositoryProvider(
+        //   create: (context) => WeatherRepository(WeatherDataProvider()),
+        //   child: BlocProvider(
+        //     create: (context) => WeatherBloc(context.read<WeatherRepository>()),
+        //     child: MaterialApp(
+        //       debugShowCheckedModeBanner: false,
+        //       theme: ThemeData.dark(useMaterial3: true),
+        //       home: LoginScreen(),
+        //     ),
+        //   ),
+        // );
+
+        MultiBlocProvider(
       providers: [
-        BlocProvider(create: (_) => CounterBloc()),
-        BlocProvider(
+        BlocProvider<CounterBloc>(
+          create: (_) => CounterBloc(),
+        ),
+        BlocProvider<ConuterCubit>(
           create: (_) => ConuterCubit(),
         ),
-        BlocProvider(create: (_) => TodoCubit()),
-        BlocProvider(create: (_) => AuthenticationBloc())
+        BlocProvider<TodoCubit>(
+          create: (_) => TodoCubit(),
+        ),
+        BlocProvider<AuthenticationBloc>(
+          create: (_) => AuthenticationBloc(),
+        ),
+        RepositoryProvider<WeatherRepository>(
+          create: (context) => WeatherRepository(WeatherDataProvider()),
+          child: BlocProvider<WeatherBloc>(
+            create: (context) => WeatherBloc(context.read<WeatherRepository>()),
+          ),
+        ),
       ],
       child: MaterialApp(
-        theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-          useMaterial3: true,
-        ),
+        theme: ThemeData.dark(useMaterial3: true),
+        // Use Material 3 design
+
         home: LoginScreen(),
         // home: CounterPage(),
       ),
