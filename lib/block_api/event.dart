@@ -9,5 +9,5 @@ class Loadevent extends UserEvents {
   List<Object?> get props => [];
 }
 
-/// this file for creating LoadEvent same as state file 
-/// now forward to bloc file 
+/// this file for creating LoadEvent same as state file
+/// now forward to bloc file

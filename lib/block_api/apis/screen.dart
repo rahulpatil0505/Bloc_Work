@@ -75,6 +75,5 @@ class Screen extends StatelessWidget {
   }
 }
 
-
 /// use flutterBloc for bloc provider and multi bloc provider
-/// 
+///

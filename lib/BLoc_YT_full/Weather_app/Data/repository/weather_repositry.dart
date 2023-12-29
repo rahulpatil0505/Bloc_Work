@@ -22,7 +22,7 @@ class WeatherRepository {
       if (data['cod'] != '200') {
         throw 'An unexpected error occurred';
       }
-      print("check ${data}");
+      print("check ${data[0]} ");
       return WeatherModel.fromJson(data);
     } catch (e) {
       throw e.toString();

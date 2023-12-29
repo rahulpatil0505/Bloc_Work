@@ -58,14 +58,12 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
             ),
             const SizedBox(height: 50),
-            const SocialButton(
-                iconPath: 'assets/svgs/g_logo.svg',
-                label: 'Continue with Google'),
+            const SocialButton(iconPath: '', label: 'Continue with Google  '),
             const SizedBox(height: 20),
             const SocialButton(
-              iconPath: 'assets/svgs/f_logo.svg',
+              iconPath: '',
               label: 'Continue with Facebook',
-              horizontalPadding: 90,
+              // horizontalPadding: 90,
             ),
             const SizedBox(height: 15),
             const Text(
@@ -93,6 +91,9 @@ class _LoginScreenState extends State<LoginScreen> {
               },
               name: 'Sign In',
             ),
+            SizedBox(
+              height: 20,
+            )
           ],
         )));
       },

@@ -17,26 +17,29 @@ class LoginField extends StatelessWidget {
       constraints: const BoxConstraints(
         maxWidth: 400,
       ),
-      child: TextFormField(
-        controller: controller,
-        decoration: InputDecoration(
-            contentPadding: const EdgeInsets.all(27),
-            enabledBorder: OutlineInputBorder(
-              borderSide: const BorderSide(
-                color: Mycolors.borderColor,
-                width: 3,
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: TextFormField(
+          controller: controller,
+          decoration: InputDecoration(
+              contentPadding: const EdgeInsets.all(27),
+              enabledBorder: OutlineInputBorder(
+                borderSide: const BorderSide(
+                  color: Mycolors.borderColor,
+                  width: 3,
+                ),
+                borderRadius: BorderRadius.circular(10),
               ),
-              borderRadius: BorderRadius.circular(10),
-            ),
-            focusedBorder: OutlineInputBorder(
-              borderSide: const BorderSide(
-                color: Mycolors.gradient2,
-                width: 3,
+              focusedBorder: OutlineInputBorder(
+                borderSide: const BorderSide(
+                  color: Mycolors.gradient2,
+                  width: 3,
+                ),
+                borderRadius: BorderRadius.circular(10),
               ),
-              borderRadius: BorderRadius.circular(10),
-            ),
-            hintText: hintText,
-            hintStyle: TextStyle(color: Colors.white)),
+              hintText: hintText,
+              hintStyle: TextStyle(color: Colors.white)),
+        ),
       ),
     );
   }

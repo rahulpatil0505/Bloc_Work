@@ -45,5 +45,4 @@ class Support {
   }
 }
 
-
 // create model using response

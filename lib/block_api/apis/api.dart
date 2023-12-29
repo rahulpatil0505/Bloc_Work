@@ -19,7 +19,6 @@ class UserData {
   }
 }
 
-
-/// page 1 get api response and create model 
-/// after creating model create on api call function 
-///  then create state file 
+/// page 1 get api response and create model
+/// after creating model create on api call function
+///  then create state file

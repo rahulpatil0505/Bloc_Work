@@ -20,7 +20,7 @@ class AuthenticationBloc
       final password = event.password;
 
       if (password.length < 6) {
-        return emit(AuthFail("Passowrd is greter then 6 digits"));
+        return emit(AuthFail("Password is greter then 6 digits"));
       }
       await Future.delayed(const Duration(seconds: 2), () {
         return emit(AuthSucess(uid: "id:- $email \nPassword:- $password"));

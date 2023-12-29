@@ -83,7 +83,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
           }
 
           final data = snapshot.data!;
-
+          print(data);
           final currentWeatherData = data['list'][0];
 
           final currentTemp = currentWeatherData['main']['temp'];
@@ -154,9 +154,9 @@ class _WeatherScreenState extends State<WeatherScreen> {
                 ),
                 const SizedBox(height: 8),
                 SizedBox(
-                  height: 120,
+                  height: 122,
                   child: ListView.builder(
-                    itemCount: 5,
+                    itemCount: 8,
                     scrollDirection: Axis.horizontal,
                     itemBuilder: (context, index) {
                       final hourlyForecast = data['list'][index + 1];

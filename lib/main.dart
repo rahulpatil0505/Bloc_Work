@@ -4,7 +4,10 @@ import 'package:blockdemoapi/BLoc_YT_full/Weather_app/Data/repository/weather_re
 import 'package:blockdemoapi/BLoc_YT_full/Weather_app/bloc/weather_bloc.dart';
 import 'package:blockdemoapi/BLoc_YT_full/bloc/counter_bloc.dart';
 import 'package:blockdemoapi/BLoc_YT_full/cubit/counter_cubit.dart';
+import 'package:blockdemoapi/BLoc_YT_full/home_page.dart';
 import 'package:blockdemoapi/BLoc_YT_full/todo_app/cubit/todo_cubit.dart';
+import 'package:blockdemoapi/BLoc_YT_full/todo_app/todo_show.dart';
+import 'package:blockdemoapi/cubit_api/cubit/user_d_etails_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -13,6 +16,7 @@ import 'BLoc_YT_full/Bloc_validation_app/bloc/authentication_bloc.dart';
 
 import 'BLoc_YT_full/Weather_app/Ui_part/Screens/Weather_screen.dart';
 import 'BLoc_YT_full/Weather_app/Ui_part/Screens/Weather_with_bloc.dart';
+import 'cubit_api/screens/userScreen.dart';
 
 void main() {
   Bloc.observer = MyBlocObserver();
@@ -51,6 +55,9 @@ class MyApp extends StatelessWidget {
         BlocProvider<AuthenticationBloc>(
           create: (_) => AuthenticationBloc(),
         ),
+        BlocProvider<UserDEtailsCubit>(
+          create: (context) => UserDEtailsCubit(),
+        ),
         RepositoryProvider<WeatherRepository>(
           create: (context) => WeatherRepository(WeatherDataProvider()),
           child: BlocProvider<WeatherBloc>(
@@ -62,7 +69,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData.dark(useMaterial3: true),
         // Use Material 3 design
 
-        home: LoginScreen(),
+        home: const UserScreen(),
         // home: CounterPage(),
       ),
     );

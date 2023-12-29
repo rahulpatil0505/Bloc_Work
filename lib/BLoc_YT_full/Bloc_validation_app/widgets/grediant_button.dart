@@ -27,18 +27,21 @@ class GradientButton extends StatelessWidget {
         ),
         borderRadius: BorderRadius.circular(7),
       ),
-      child: ElevatedButton(
-        onPressed: onPressed,
-        style: ElevatedButton.styleFrom(
-          fixedSize: const Size(395, 55),
-          backgroundColor: Colors.transparent,
-          shadowColor: Colors.transparent,
-        ),
-        child: Text(
-          name,
-          style: const TextStyle(
-            fontWeight: FontWeight.w600,
-            fontSize: 17,
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: ElevatedButton(
+          onPressed: onPressed,
+          style: ElevatedButton.styleFrom(
+            fixedSize: const Size(340, 55),
+            backgroundColor: Colors.transparent,
+            shadowColor: Colors.transparent,
+          ),
+          child: Text(
+            name,
+            style: const TextStyle(
+              fontWeight: FontWeight.w600,
+              fontSize: 17,
+            ),
           ),
         ),
       ),
